@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bxwn62xiiearc" path="res://Assets/Factions/Bosses/Bayangan/Skill24.png" id="13_u3coc"]
 [ext_resource type="Texture2D" uid="uid://ctnmy2e0t2kcs" path="res://Assets/Factions/Bosses/Bayangan/Skill25.png" id="14_uq2kt"]
 [ext_resource type="PackedScene" uid="uid://3b55casibbeg" path="res://Scenes/healthbar.tscn" id="19_5n7ch"]
-[ext_resource type="Theme" uid="uid://r1kql7apbef" path="res://Resources/main_menu.tres" id="20_00gcc"]
+[ext_resource type="Theme" path="res://Resources/main_menu.tres" id="20_00gcc"]
 [ext_resource type="Script" path="res://Scripts/boss_animation_controller.gd" id="24_q8h8n"]
 [ext_resource type="Texture2D" uid="uid://cm5ws5jwovqvh" path="res://Assets/Factions/Bosses/Golem/Particle/Earth Bump.png" id="25_b0lby"]
 [ext_resource type="Texture2D" uid="uid://byjp0164df8h4" path="res://Assets/Factions/Bosses/Golem/Particle/Earth Wall.png" id="26_0iynu"]
@@ -313,9 +313,7 @@ material = SubResource("ShaderMaterial_w2mge")
 position = Vector2(10.4166, 39.5833)
 scale = Vector2(2.33586, 2.33586)
 sprite_frames = SubResource("SpriteFrames_4pqgq")
-animation = &"dead"
-frame = 6
-frame_progress = 1.0
+animation = &"idle"
 offset = Vector2(0, -31)
 script = ExtResource("24_q8h8n")
 

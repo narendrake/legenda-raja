@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://v2lckxcyaxua" path="res://TileSets/ground.tres" id="1_40y2v"]
 [ext_resource type="Script" path="res://Scripts/main_level.gd" id="1_jtdo1"]
 [ext_resource type="PackedScene" uid="uid://wekvrtqbsgyr" path="res://Scenes/player.tscn" id="2_j7id7"]
-[ext_resource type="PackedScene" uid="uid://cwf6l2g5js3t2" path="res://freeze_manager.tscn" id="3_ylu7l"]
+[ext_resource type="PackedScene" path="res://freeze_manager.tscn" id="3_ylu7l"]
 [ext_resource type="Script" path="res://Scripts/freeze_manager.gd" id="4_opa6i"]
 [ext_resource type="AudioStream" uid="uid://jqf17ade7e7m" path="res://Assets/Sound/BGM/musik lobby legenda raja.mp3" id="6_4fbrs"]
 [ext_resource type="PackedScene" uid="uid://cpoxw1t06oygi" path="res://Scenes/pause_menu.tscn" id="6_naiva"]

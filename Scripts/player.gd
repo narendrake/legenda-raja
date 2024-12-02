@@ -49,7 +49,6 @@ func _physics_process(delta: float) -> void:
 			if get_tree().current_scene.get_child(i).name == "CanvasLayer1":
 				get_tree().current_scene.get_child(i).add_child(ending)
 				
-				
 	if playerHealth.is_dead():
 		if playDeadAnim == false:
 			animated_sprite_2d.play_die_animation()

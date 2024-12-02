@@ -18,7 +18,7 @@
 [ext_resource type="Script" path="res://Scripts/boss_animation_controller.gd" id="12_hwnvt"]
 [ext_resource type="Script" path="res://Scripts/boss_health_system.gd" id="17_vruaw"]
 [ext_resource type="PackedScene" uid="uid://3b55casibbeg" path="res://Scenes/healthbar.tscn" id="18_w135q"]
-[ext_resource type="Theme" uid="uid://r1kql7apbef" path="res://Resources/main_menu.tres" id="19_bu3ik"]
+[ext_resource type="Theme" path="res://Resources/main_menu.tres" id="19_bu3ik"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w2mge"]
 shader = ExtResource("2_b444y")
@@ -435,6 +435,8 @@ text = "Siboru Mardomu
 "
 vertical_alignment = 1
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
 [connection signal="timeout" from="TimerCanAttack" to="." method="_on_timer_can_attack_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="CombatSystem/WeaponHitbox" to="." method="_on_weapon_hitbox_area_entered"]
@@ -451,3 +453,4 @@ vertical_alignment = 1
 [connection signal="timeout" from="TimerAttacking" to="." method="_on_timer_attacking_timeout"]
 [connection signal="timeout" from="TimerPreattack" to="." method="_on_timer_preattack_timeout"]
 [connection signal="timeout" from="TimerCanDash" to="." method="_on_timer_can_dash_timeout"]
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]

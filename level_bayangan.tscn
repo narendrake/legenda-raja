@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://jnqbv8p5orvg" path="res://level_bayangan.tres" id="1_8jfr1"]
 [ext_resource type="PackedScene" uid="uid://wekvrtqbsgyr" path="res://Scenes/player.tscn" id="2_e3sng"]
-[ext_resource type="PackedScene" uid="uid://cwf6l2g5js3t2" path="res://freeze_manager.tscn" id="3_a57kg"]
+[ext_resource type="PackedScene" path="res://freeze_manager.tscn" id="3_a57kg"]
 [ext_resource type="PackedScene" uid="uid://crpvb1bdbp6p3" path="res://Boss/Bayangan/boss_bayangan.tscn" id="4_7a8vs"]
 [ext_resource type="PackedScene" uid="uid://cpoxw1t06oygi" path="res://Scenes/pause_menu.tscn" id="5_l4yng"]
 [ext_resource type="AudioStream" uid="uid://dopq06rmw2wvv" path="res://Assets/Sound/BGM/bgm boss bayang.mp3" id="5_nyqy1"]

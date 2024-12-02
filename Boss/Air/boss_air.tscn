@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://s10de4s11tsq" path="res://Assets/Factions/Bosses/Air/tornado1 (1).png" id="19_47pnw"]
 [ext_resource type="Script" path="res://Scripts/boss_health_system.gd" id="27_jtpjv"]
 [ext_resource type="PackedScene" uid="uid://3b55casibbeg" path="res://Scenes/healthbar.tscn" id="28_y405j"]
-[ext_resource type="Theme" uid="uid://r1kql7apbef" path="res://Resources/main_menu.tres" id="29_kgqd3"]
+[ext_resource type="Theme" path="res://Resources/main_menu.tres" id="29_kgqd3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w2mge"]
 shader = ExtResource("2_l3bmx")
@@ -505,6 +505,8 @@ theme_override_font_sizes/font_size = 27
 text = "Sira Lhok"
 vertical_alignment = 1
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="CombatSystem/WeaponHitbox" to="." method="_on_weapon_hitbox_area_entered"]
 [connection signal="body_entered" from="CombatSystem/WeaponHitbox" to="CombatSystem" method="_on_weapon_hitbox_body_entered"]
@@ -518,3 +520,4 @@ vertical_alignment = 1
 [connection signal="timeout" from="TimerCanShoot" to="." method="_on_timer_can_shoot_timeout"]
 [connection signal="timeout" from="TimerCanShootCircle" to="." method="_on_timer_can_shoot_circle_timeout"]
 [connection signal="timeout" from="TimerCanRoar" to="." method="_on_timer_can_roar_timeout"]
+[connection signal="navigation_finished" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_navigation_finished"]

@@ -16,6 +16,7 @@ enum BossState {
 @onready var flash_animation = $AnimatedSprite2D/FlashAnimation
 @onready var freeze_manager = $"../FreezeManager"
 @onready var healthbar: ProgressBar = $CanvasLayer/Healthbar
+@onready var nav : NavigationAgent2D = $NavigationAgent2D
 
 var kena_damage = "res://Assets/Sound/SFX MONSTER BATU/new new monster kena dmg.mp3"
 var tinju_sound = "res://Assets/Sound/SFX MONSTER BATU/new new tinjuan monster .mp3"
@@ -46,6 +47,7 @@ func _ready() -> void:
 
 func change_state(new_state: BossState) -> void:
 	current_state = new_state
+	nav.target_position = player.position
 	
 #func _physics_process(delta: float) -> void:
 	#pass
@@ -58,7 +60,8 @@ func _physics_process(delta: float) -> void:
 	if bossHealth.is_dead():
 		change_state(BossState.Dead)
 	
-	var direction = (player.position - position).normalized()
+	#var direction = (player.position - position).normalized()
+	var direction = (nav.get_next_path_position() - global_position).normalized()
 	velocity = direction * SPEED * delta
 	if velocity.x > 0 and isDead == false:
 		animated_sprite_2d.flip_h = false
@@ -201,3 +204,7 @@ func _on_weapon_hitbox_area_entered(area: Area2D) -> void:
 
 func _on_timer_can_dash_timeout() -> void:
 	canDash = true
+
+
+func _on_navigation_agent_2d_navigation_finished() -> void:
+	nav.target_position = player.position

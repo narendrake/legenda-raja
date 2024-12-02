@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dscr837g0sw8b"]
 
-[ext_resource type="Theme" uid="uid://r1kql7apbef" path="res://Resources/main_menu.tres" id="1_tu06i"]
+[ext_resource type="Theme" path="res://Resources/main_menu.tres" id="1_tu06i"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="3_tgang"]
 [ext_resource type="Texture2D" uid="uid://ca41v2q0fsti8" path="res://Assets/LEGENDA TIGA RAJA.png" id="4_lp0jy"]
 [ext_resource type="Texture2D" uid="uid://bg0nri6iewqjb" path="res://Assets/UI/Banners/Banner_Vertical.png" id="4_m8tx7"]

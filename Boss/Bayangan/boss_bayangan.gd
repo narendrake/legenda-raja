@@ -30,8 +30,8 @@ var canTangan:bool = false
 
 var current_state: BossState = BossState.Walking
 var state_change_timer: float = 0.0
-var SPEED = 10000
-var startingHealth = 40
+var SPEED = 12000
+var startingHealth = 45
 var direction = Vector2()
 var random_move_time = 1 # Time in seconds to pick a new random direction
 var move_timer = 0.0
@@ -59,7 +59,7 @@ func _physics_process(delta: float) -> void:
 		var random_angle = randf_range(0, 2 * PI)  # Pick a random angle
 		direction = dir_to_player.rotated(random_angle).normalized()  # Move away from player with random variation
 		move_timer = random_move_time
-	
+	print(current_state)
 	velocity = direction * SPEED * delta
 	if velocity.x > 0 and isDead == false:
 		animated_sprite_2d.flip_h = false
@@ -94,7 +94,7 @@ func _physics_process(delta: float) -> void:
 				$TimerCanTangan.start()
 				canTangan = false
 		
-	if position.distance_to(player.position) > 100 and isDead == false:   
+	if isDead == false:   
 		move_and_slide()
 		
 func take_damage(damage : int):

@@ -18,6 +18,7 @@ enum BossState {
 @onready var projectile_scene = preload("res://Boss/Air/peluru.tscn")
 @onready var circle_scene = preload("res://Boss/Air/circle.tscn")
 @onready var healthbar: ProgressBar = $CanvasLayer/Healthbar
+@onready var nav: NavigationAgent2D = $NavigationAgent2D
 
 
 var audio_player = AudioStreamPlayer2D.new()
@@ -99,7 +100,8 @@ func _physics_process(delta: float) -> void:
 		BossState.Tornado:
 			$CombatSystem/BossBodyHitbox/CollisionShape2D.disabled = true
 			animated_sprite_2d.play("tornado")
-			direction = (player.position - position).normalized()
+			nav.target_position = player.position
+			direction = (nav.get_next_path_position() - global_position).normalized()
 			if canShootCircle:
 				shoot_projectile_circle()
 				canShootCircle = false
@@ -211,3 +213,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "dead":
 		queue_free()
 	
+
+#
+#func _on_navigation_agent_2d_navigation_finished() -> void:
+	#nav.target_position = player.position
